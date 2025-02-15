@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes fly {
+    0% {
+      left: -200px;
+      transform: scaleX(1);
+    }
+    50% {
+      left: 100%;
+      transform: scaleX(1);
+    }
+    51% {
+      transform: scaleX(-1);
+    }
+    100% {
+      left: -200px;
+      transform: scaleX(-1);
+    }
+  }
+  
+  @keyframes flap {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .animate-bird {
+    position: absolute;
+    top: 5px;
+    animation: fly 20s linear infinite, flap 3s ease-in-out infinite;
+  }
+  
